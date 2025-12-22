@@ -28,6 +28,20 @@ import Cgv from './components/Cgv';
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState('home'); // 'home', 'mentions', 'sitemap', 'rgpd', 'cgu', or 'cgv'
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,6 +61,7 @@ function App() {
 
   const navigateTo = (page, section = null) => {
     setCurrentPage(page);
+    setIsMenuOpen(false); // Close menu on navigation
     window.scrollTo(0, 0);
 
     if (section) {
@@ -60,10 +75,15 @@ function App() {
   };
 
   const handleNavClick = (e, target) => {
+    setIsMenuOpen(false); // Close menu on navigation
     if (currentPage !== 'home') {
       e.preventDefault();
       navigateTo('home', target.substring(1));
     }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const renderContent = () => {
@@ -240,13 +260,21 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isMenuOpen ? 'menu-open' : ''}`}>
       {/* Header - Always present */}
-      <header className={`landing-header animated fadeInDown ${isScrolled || currentPage !== 'home' ? 'scrolled' : ''}`}>
+      <header className={`landing-header animated fadeInDown ${isScrolled || currentPage !== 'home' ? 'scrolled' : ''} ${isMenuOpen ? 'mobile-nav-open' : ''}`}>
         <div className="logo-container" onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }}>
-          <img src={isScrolled || currentPage !== 'home' ? logoDark : logo} alt="Eden France Consulting" />
+          <img src={isScrolled || currentPage !== 'home' || isMenuOpen ? logoDark : logo} alt="Eden France Consulting" />
         </div>
-        <nav>
+
+        {/* Hamburger Menu Icon */}
+        <div className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        <nav className={`nav-container ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav-menu">
             <li className="nav-item"><a href="#presentation" onClick={(e) => handleNavClick(e, '#presentation')}>Présentation</a></li>
             <li className="nav-item"><a href="#missions" onClick={(e) => handleNavClick(e, '#missions')}>Nos Missions</a></li>

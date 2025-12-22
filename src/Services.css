@@ -122,6 +122,15 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .widgets-container {
+    gap: 30px;
+  }
+  .widget-item {
+    width: 260px;
+  }
+}
+
 @media (max-width: 900px) {
   .widgets-container {
     flex-direction: column;
@@ -131,5 +140,27 @@
   
   .widgets-connector {
     display: none; /* Hide connector on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 40px 15px;
+  }
+  .services-header h2 {
+    font-size: 1.3rem;
+  }
+  .widget-icon-circle {
+    width: 120px;
+    height: 120px;
+  }
+  .widget-icon {
+    width: 50px;
   }
 }
