@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import './Services.css';
-import logo from './assets/img/logo-default-white.png';
-import logoDark from './assets/img/logo-default.png';
-import logoQualiopi from './assets/img/LogoQualiopi-300dpi-Avec-Marianne.png';
+import logo from './assets/img/logo-default-white.svg';
+import logoDark from './assets/img/logo-default.svg';
+import logoQualiopi from './assets/img/LogoQualiopi-300dpi-Avec-Marianne.svg';
 import iconFb from './assets/img/widgets/facebook-svgrepo-com.svg';
 import iconGplus from './assets/img/widgets/google-plus-g-svgrepo-com.svg';
 import './Partners.css';

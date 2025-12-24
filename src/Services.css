@@ -79,9 +79,9 @@
 
 /* Hover Effects */
 .widget-icon-circle:hover {
-  background-color: #3e2b46; /* Use a dark purple/black tone from the image */
+  background-color: var(--primary-color); 
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(62, 43, 70, 0.4);
+  box-shadow: 0 10px 25px rgba(14, 58, 126, 0.4);
 }
 
 .widget-icon-circle:hover .widget-icon {

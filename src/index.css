@@ -1,4 +1,9 @@
 :root {
+  --primary-color: #0e3a7e;
+  --primary-overlay: #0e3a7eb5;
+  --primary-dark: #0a2b5e;
+  --text-light: #ffffff;
+  --text-dark: #333333;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 400;

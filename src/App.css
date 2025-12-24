@@ -20,7 +20,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/img/1920x1080/34.jpg');
+  background-image: url('./assets/img/1920x1080/34.webp');
   background-size: cover;
   background-position: center top;
   z-index: -1;
@@ -32,7 +32,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Just a slight dark tint for readability, no purple */
+  background: var(--primary-overlay);
   z-index: 0;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .landing-header.scrolled .nav-item a:hover {
-  color: #6a4c78 !important; /* Purple on hover when scrolled */
+  color: var(--primary-color) !important; /* Blue on hover when scrolled */
   opacity: 1;
 }
 

@@ -156,7 +156,7 @@
 
 .cta-title {
   font-size: 2rem;
-  color: #6a4c78; /* Purple tone */
+  color: var(--primary-color); /* Blue tone */
   margin-bottom: 15px;
   font-weight: 300;
 }
@@ -170,19 +170,22 @@
 
 .cta-button {
   display: inline-block;
-  background-color: #583e60; /* Dark purple */
-  color: #fff;
+  background-color: var(--primary-color);
+  color: #ffffff !important;
   padding: 15px 40px;
   text-decoration: none;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
   border-radius: 2px;
 }
 
 .cta-button:hover {
-  background-color: #442a4b;
+  background-color: var(--primary-dark);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(14, 58, 126, 0.3);
 }
 
 /* Responsive */

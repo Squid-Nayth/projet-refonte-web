@@ -35,14 +35,14 @@ em, li, li a {
 
 a {
   font-family: Roboto, sans-serif;
-  color: #6a4c78;
+  color: var(--primary-color);
   outline: 0;
   text-decoration: none;
 }
 
 a:focus, a:hover, a:active {
   outline: 0;
-  color: #4a3456;
+  color: var(--primary-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::selection {
   color: #fff;
-  background: #6a4c78;
+  background: var(--primary-color);
 }
 
 :active, :focus {
