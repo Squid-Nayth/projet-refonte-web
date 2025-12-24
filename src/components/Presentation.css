@@ -1,0 +1,195 @@
+/* Presentation Page Styles */
+
+/* Hero Section */
+.presentation-hero {
+    position: relative;
+    height: 500px; /* Increased height to match image */
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: -91px; /* Pull up behind the fixed/absolute header */
+    padding-top: 91px; /* Compensate for header height */
+}
+
+.presentation-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient from left (blue) to right (transparent/lighter) */
+    background: linear-gradient(to right, rgba(0, 48, 102, 0.9) 0%, rgba(0, 48, 102, 0.7) 40%, rgba(0, 48, 102, 0.2) 100%);
+    z-index: 1;
+}
+
+.presentation-hero .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.presentation-hero h1 {
+    font-size: 4rem;
+    font-weight: 300; /* Light font weight */
+    margin-bottom: 5px;
+    color: #fff; /* Changed to white */
+    line-height: 1.1;
+}
+
+.presentation-hero p {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs-section {
+    background-color: #003066; /* Primary Blue */
+    padding: 25px 0;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumbs-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.breadcrumbs-content h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+    color: #fff;
+}
+
+.breadcrumbs-links {
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.breadcrumbs-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.breadcrumbs-links a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.breadcrumbs-links .current {
+    color: #fff;
+}
+
+/* Content Section */
+.presentation-content {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.presentation-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.presentation-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px; /* Increased gap */
+    align-items: flex-start;
+}
+
+.col-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.col-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.col-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* No border radius or shadow in the reference image, clean cut */
+}
+
+.presentation-content h2 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 300; /* Lighter weight */
+    line-height: 1.2;
+}
+
+.presentation-content .subtitle {
+    color: #003066; /* Primary Blue */
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-family: serif; /* Or a serif-like font if available, otherwise sans-serif italic */
+}
+
+.presentation-content .text-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .presentation-hero h1 {
+        font-size: 3rem;
+    }
+    .presentation-hero p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .presentation-hero {
+        height: auto;
+        padding: 120px 0 60px;
+        margin-top: 0;
+    }
+    
+    .presentation-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .breadcrumbs-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -13,6 +13,10 @@ const PlanDuSite = lazy(() => import('./components/PlanDuSite'));
 const Rgpd = lazy(() => import('./components/Rgpd'));
 const Cgu = lazy(() => import('./components/Cgu'));
 const Cgv = lazy(() => import('./components/Cgv'));
+const Presentation = lazy(() => import('./components/Presentation'));
+const PartnersIcons = lazy(() => import('./components/PartnersIcons'));
+const ValuesSection = lazy(() => import('./components/ValuesSection'));
+import CookieBanner from './components/CookieBanner';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,6 +74,7 @@ function App() {
       case 'rgpd': return <Rgpd onBackToHome={() => navigateTo('home')} />;
       case 'cgu': return <Cgu onBackToHome={() => navigateTo('home')} />;
       case 'cgv': return <Cgv onBackToHome={() => navigateTo('home')} />;
+      case 'presentation': return <Presentation onNavigate={navigateTo} />;
       default: return <Home />;
     }
   };
@@ -89,7 +94,7 @@ function App() {
 
         <nav className={`nav-container ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav-menu">
-            <li className="nav-item"><a href="#presentation" onClick={(e) => handleNavClick(e, '#presentation')}>Présentation</a></li>
+            <li className="nav-item"><a href="#presentation" className={currentPage === 'presentation' ? 'active-btn' : ''} onClick={(e) => { e.preventDefault(); navigateTo('presentation'); }}>Présentation</a></li>
             <li className="nav-item"><a href="#missions" onClick={(e) => handleNavClick(e, '#missions')}>Nos Missions</a></li>
             <li className="nav-item"><a href="#services" onClick={(e) => handleNavClick(e, '#services')}>Nos Services</a></li>
             <li className="nav-item"><a href="#formations" onClick={(e) => handleNavClick(e, '#formations')}>Formations</a></li>
@@ -105,6 +110,7 @@ function App() {
         {renderContent()}
         <Footer onNavigate={navigateTo} />
       </Suspense>
+      <CookieBanner />
     </div>
   );
 }

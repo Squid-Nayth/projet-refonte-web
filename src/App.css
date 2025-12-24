@@ -105,6 +105,31 @@
   opacity: 1;
 }
 
+/* Active Button Style for Presentation */
+.nav-item a.active-btn {
+  background-color: #fff;
+  color: #003066 !important;
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.nav-item a.active-btn:hover {
+  color: #003066 !important;
+  opacity: 0.9;
+}
+
+.landing-header.scrolled .nav-item a.active-btn {
+  background-color: #003066;
+  color: #fff !important;
+}
+
+.landing-header.scrolled .nav-item a.active-btn:hover {
+  color: #fff !important;
+  opacity: 0.9;
+}
+
 /* Hamburger Menu Toggle */
 .menu-toggle {
   display: none;
