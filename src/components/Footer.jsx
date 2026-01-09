@@ -46,7 +46,7 @@ const Footer = ({ onNavigate }) => {
 
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
-                    <span className="copyright">Copyright © 2016-2025 Eden France Consulting</span>
+                    <span className="copyright">Copyright © 2016-2026 Eden France Consulting</span>
                     <div className="footer-links">
                         <span onClick={() => onNavigate('mentions')} style={{ cursor: 'pointer' }}>Mentions légales</span>
                         <span className="separator">|</span>

@@ -17,6 +17,32 @@ const Presentation = lazy(() => import('./components/Presentation'));
 const PartnersIcons = lazy(() => import('./components/PartnersIcons'));
 const ValuesSection = lazy(() => import('./components/ValuesSection'));
 import CookieBanner from './components/CookieBanner';
+import SchemaOrg from './components/SchemaOrg';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Eden France Consulting",
+  "url": "https://edenfranceconsulting.com",
+  "logo": "https://edenfranceconsulting.com/logo.png",
+  "description": "Eden France Consulting propose des services de formation professionnelle, prestations administratives et comptables, conseil et accompagnement pour les TPE, PME et particuliers.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 bis rue des Carrières",
+    "addressLocality": "Fontenay sous Bois",
+    "postalCode": "94120",
+    "addressCountry": "FR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+33-9-86-65-71-02",
+    "contactType": "customer service",
+    "email": "contact@edenfranceconsulting.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/eden-france-consulting"
+  ]
+};
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -81,6 +107,7 @@ function App() {
 
   return (
     <div className={`app-container ${isMenuOpen ? 'menu-open' : ''}`}>
+      <SchemaOrg data={schemaData} />
       <header className={`landing-header animated fadeInDown ${isScrolled || currentPage !== 'home' ? 'scrolled' : ''} ${isMenuOpen ? 'mobile-nav-open' : ''}`}>
         <div className="logo-container" onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }}>
           <img src={isScrolled || currentPage !== 'home' || isMenuOpen ? logoDark : logo} alt="Eden France Consulting" width="220" height="60" />
